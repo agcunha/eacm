@@ -1,0 +1,784 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://purl.org/tcm#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://purl.org/tcm">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo>Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Physical_Technology_Component">
+    <rdfs:comment xml:lang="en">A specific technology infrastructure product or technology infrastructure product instance. For example, a particular product version of a Commercial Off-The-Shelf (COTS) solution, or a specific brand and version of server. </rdfs:comment>
+    <rdfs:label xml:lang="en">Physical Technology Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Organization_Unit">
+    <rdfs:comment xml:lang="en">A self-contained unit of resources with goals, objectives, and measures. Organization units may include external parties and business partner organizations. </rdfs:comment>
+    <rdfs:label xml:lang="en">Organization Unit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Logical_Application_Component">
+    <rdfs:comment xml:lang="en">An encapsulation of application functionality that is independent of a particular implementation. For example, the classification of all purchase request processing applications implemented in an enterprise. </rdfs:comment>
+    <rdfs:label xml:lang="en">Logical Application Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Physical_Application_Component">
+    <rdfs:comment xml:lang="en">An application, application module, application service, or other deployable component of functionality. For example, a configured and deployed instance of a Commercial Off-The-Shelf (COTS) Enterprise Resource Planning (ERP) supply chain management application. </rdfs:comment>
+    <rdfs:label xml:lang="en">Physical Application Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Physical_Data_Component">
+    <rdfs:comment xml:lang="en">A boundary zone that encapsulates related data entities to form a physical location to be held. For example, a purchase order business object, comprising purchase order header and item business object nodes. </rdfs:comment>
+    <rdfs:label xml:lang="en">Physical Data Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Control">
+    <rdfs:label xml:lang="pt-br">Controle</rdfs:label>
+    <rdfs:comment xml:lang="en">A decision-making step with accompanying decision logic used to determine execution approach for a process or to ensure that a process complies with governance criteria. For example, a sign-off control on the purchase request processing process that checks whether the total value of the request is within the sign-off limits of the requester, or whether it needs escalating to higher authority.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Process">
+    <rdfs:label xml:lang="en">Process</rdfs:label>
+    <rdfs:comment xml:lang="en">A process represents flow of control between or within functions and/or services (depends on the granularity of definition).&#xD;
+&#xD;
+Processes represent a sequence of activities that together achieve a specified outcome, can be decomposed into sub-processes, and can show operation of a function or service (at next level of detail). Processes may also be used to link or compose organizations, functions, services, and processes.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Measure">
+    <rdfs:comment xml:lang="en">An indicator or factor that can be tracked, usually on an ongoing basis, to determine success or alignment with objectives and goals. </rdfs:comment>
+    <rdfs:label xml:lang="en">Measure</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Logical_Data_Component">
+    <rdfs:comment xml:lang="en">A boundary zone that encapsulates related data entities to form a logical location to be held; for example, external procurement information. </rdfs:comment>
+    <rdfs:label xml:lang="en">Logical Data Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Constraint">
+    <rdfs:label xml:lang="en">Constraint</rdfs:label>
+    <rdfs:comment xml:lang="en">An external factor that prevents an organization from pursuing particular approaches to meet its goals. For example, customer data is not harmonized within the organization, regionally or nationally, constraining the organization's ability to offer effective customer service. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Restrição</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Location">
+    <rdfs:comment xml:lang="en">A place where business activity takes place and can be hierarchically decomposed. </rdfs:comment>
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Assumption">
+    <rdfs:label xml:lang="en">Assumption</rdfs:label>
+    <rdfs:comment xml:lang="en">A statement of probable fact that has not been fully validated at this stage, due to external constraints. For example, it may be assumed that an existing application will support a certain set of functional requirements, although those requirements may not yet have been individually validated. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Premissa</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Technology_Component">
+    <rdfs:label xml:lang="en">Technology_Component</rdfs:label>
+    <rdfs:comment xml:lang="en">An encapsulation of technology infrastructure that represents a class of technology product or specific technology product.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Gap">
+    <rdfs:label xml:lang="en">Gap</rdfs:label>
+    <rdfs:comment xml:lang="en">A statement of difference between two states. Used in the context of gap analysis, where the difference between the Baseline and Target Architecture is identified. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Lacuna</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Function">
+    <rdfs:label xml:lang="en">Function</rdfs:label>
+    <rdfs:comment xml:lang="en">Delivers business capabilities closely aligned to an organization, but not necessarily explicitly governed by the organization. Also referred to as "business function". </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Função</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Work_Package">
+    <rdfs:comment xml:lang="en">A set of actions identified to achieve one or more objectives for the business. A work package can be a part of a project, a complete project, or a program. </rdfs:comment>
+    <rdfs:label xml:lang="en">Work Package</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Logical_Technology_Component">
+    <rdfs:comment xml:lang="en">An encapsulation of technology infrastructure that is independent of a particular product. A class of technology product; for example, supply chain management software as part of an Enterprise Resource Planning (ERP) suite, or a Commercial Off-The-Shelf (COTS) purchase request processing enterprise service. </rdfs:comment>
+    <rdfs:label xml:lang="en">Logical Technology Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Information_System_Service">
+    <rdfs:comment xml:lang="en">The automated elements of a business service. An information system service may deliver or support part or all of one or more business services. </rdfs:comment>
+    <rdfs:label xml:lang="en">Information System Service</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Data_Entity">
+    <rdfs:label xml:lang="en">Data Entity</rdfs:label>
+    <rdfs:comment xml:lang="en">An encapsulation of data that is recognized by a business domain expert as a thing. Logical data entities can be tied to applications, repositories, and services and may be structured according to implementation considerations. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Entidade de dado</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Principle">
+    <rdfs:comment xml:lang="en">A qualitative statement of intent that should be met by the architecture. Has at least a supporting rationale and a measure of importance. </rdfs:comment>
+    <rdfs:label xml:lang="en">Principle</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Capability">
+    <rdfs:label xml:lang="en">Capability</rdfs:label>
+    <rdfs:comment xml:lang="en">A business-focused outcome that is delivered by the completion of one or more work packages. Using a capability-based planning approach, change activities can be sequenced and grouped in order to provide continuous and incremental business value.</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Capacidade</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Application_Component">
+    <rdfs:label xml:lang="pt-br">Componente de Aplicação</rdfs:label>
+    <rdfs:comment xml:lang="en">An encapsulation of application functionality aligned to implementation structure. For example, a purchase request processing application. </rdfs:comment>
+    <rdfs:label xml:lang="en">Application Component</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Platform_Service">
+    <rdfs:comment xml:lang="en">A technical capability required to provide enabling infrastructure that supports the delivery of applications. </rdfs:comment>
+    <rdfs:label xml:lang="en">Platform Service</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Goal">
+    <rdfs:label xml:lang="en">Goal</rdfs:label>
+    <rdfs:comment xml:lang="en">A high-level statement of intent or direction for an organization. Typically used to measure success of an organization. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Objetivo</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Service">
+    <rdfs:comment xml:lang="en">An element of behavior that provides specific functionality in response to requests from actors or other services. A service delivers or supports business capabilities, has an explicitly defined interface, and is explicitly governed. Services are defined for business, information systems, and platforms. </rdfs:comment>
+    <rdfs:label xml:lang="en">Service</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Event">
+    <rdfs:label xml:lang="en">Event</rdfs:label>
+    <rdfs:comment xml:lang="en">An organizational state change that triggers processing events; may originate from inside or outside the organization and may be resolved inside or outside the organization. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Evento</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Driver">
+    <rdfs:label xml:lang="en">Driver</rdfs:label>
+    <rdfs:comment xml:lang="en">An external or internal condition that motivates the organization to define its goals. An example of an external driver is a change in regulation or compliance rules which, for example, require changes to the way an organization operates; i.e., Sarbanes-Oxley in the US. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Direcionador</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Product">
+    <rdfs:comment xml:lang="en">Output generated by the business. The business product of the execution of a process. </rdfs:comment>
+    <rdfs:label xml:lang="en">Product</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Objective">
+    <rdfs:label xml:lang="en">Objective</rdfs:label>
+    <rdfs:comment xml:lang="en">A time-bounded milestone for an organization used to demonstrate progress towards a goal; for example, "Increase capacity utilization by 30% by the end of 2009 to support the planned increase in market share". </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Meta</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Role">
+    <rdfs:label xml:lang="en">Role</rdfs:label>
+    <rdfs:comment xml:lang="en">The usual or expected function of an actor, or the part somebody or something plays in a particular action or event. An actor may have a number of roles.&#xD;
+&#xD;
+See also Actor.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Business_Service">
+    <rdfs:label xml:lang="en">Business Service</rdfs:label>
+    <rdfs:comment xml:lang="en">Supports business capabilities through an explicitly defined interface and is explicitly governed by an organization. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Serviço de Negócio</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Requirement">
+    <rdfs:comment xml:lang="en">A quantitative statement of business need that must be met by a particular architecture or work package. </rdfs:comment>
+    <rdfs:label xml:lang="en">Requirement</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Actor">
+    <rdfs:label xml:lang="en">Actor</rdfs:label>
+    <rdfs:comment xml:lang="en">A person, organization, or system that has a role that initiates or interacts with activities; for example, a sales representative who travels to visit customers. Actors may be internal or external to an organization. In the automotive industry, an original equipment manufacturer would be considered an actor by an automotive dealership that interacts with its supply chain activities.</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Ator</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Contract">
+    <rdfs:label>Contract</rdfs:label>
+    <rdfs:comment xml:lang="en">An agreement between a service consumer and a service provider that establishes functional and non-functional parameters for interaction. </rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Contrato</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Service_Quality">
+    <rdfs:comment xml:lang="en">A preset configuration of non-functional attributes that may be assigned to a service or service contract. </rdfs:comment>
+    <rdfs:label xml:lang="en">Service Quality</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="Sets_performance_criteria_for">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Objective"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Measure"/>
+    <rdfs:label xml:lang="en">Sets performance criteria for</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_motivated_by">
+    <rdfs:range rdf:resource="#Driver"/>
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+    <rdfs:label xml:lang="en">Is motivated by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Communicates_with">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Logical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Logical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Communicates with</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_extended_by">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Logical_Application_Component"/>
+          <owl:Class rdf:about="#Logical_Data_Component"/>
+          <owl:Class rdf:about="#Logical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Is extended by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_supplied_by">
+    <rdfs:range rdf:resource="#Logical_Technology_Component"/>
+    <rdfs:domain rdf:resource="#Platform_Service"/>
+    <rdfs:label xml:lang="en">Is supplied by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Ensures_correct_operation_of">
+    <rdfs:range rdf:resource="#Process"/>
+    <rdfs:domain rdf:resource="#Control"/>
+    <rdfs:label xml:lang="en">Ensures correct operation of</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_implemented_on">
+    <rdfs:range rdf:resource="#Logical_Technology_Component"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Is implemented on</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_produced_by">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Product"/>
+    <rdfs:label xml:lang="en">Is produced by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_bounded_by">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Is bounded by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Consumes">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Consumes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Extends">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Logical_Application_Component"/>
+          <owl:Class rdf:about="#Logical_Data_Component"/>
+          <owl:Class rdf:about="#Logical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Extends</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Provides">
+    <rdfs:range rdf:resource="#Data_Entity"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Provides</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Governs_and_Measures">
+    <rdfs:label xml:lang="pt-br">Governa e Mede</rdfs:label>
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#Contract"/>
+    <rdfs:label xml:lang="en">Governs and Measures</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Operates_in">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Location"/>
+          <owl:Class rdf:about="#Function"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Organization_Unit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Operates in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Belongs_to">
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Belongs to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_provided_to">
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Is provided to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Operates_on">
+    <rdfs:range rdf:resource="#Data_Entity"/>
+    <rdfs:domain rdf:resource="#Logical_Application_Component"/>
+    <rdfs:label xml:lang="en">Operates on</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Performs">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Performs</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Realizes">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Objective"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Goal"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Realizes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Supplies_or_Consumes">
+    <rdfs:range rdf:resource="#Data_Entity"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Supplies or Consumes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_realized_by">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Is realized by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Owns_and_Governs">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+    <rdfs:label xml:lang="en">Owns and Governs</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Applies_to">
+    <rdfs:range rdf:resource="#Contract"/>
+    <rdfs:domain rdf:resource="#Service_Quality"/>
+    <rdfs:label xml:lang="en">Applies to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Precedes_or_Follows">
+    <rdfs:range rdf:resource="#Process"/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Precedes or Follows</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Involves">
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Involves</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_owned_by">
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Is owned by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Supports">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Supports</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_processed_by">
+    <rdfs:range rdf:resource="#Logical_Application_Component"/>
+    <rdfs:domain rdf:resource="#Data_Entity"/>
+    <rdfs:label xml:lang="en">Is processed by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Generates">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Event"/>
+    <rdfs:label xml:lang="en">Generates</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Provides_platform_for">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#Logical_Technology_Component"/>
+    <rdfs:label xml:lang="en">Provides platform for</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Delivers">
+    <rdfs:range rdf:resource="#Capability"/>
+    <rdfs:domain rdf:resource="#Work_Package"/>
+    <rdfs:label xml:lang="en">Delivers</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Interacts_with">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Interacts with</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Can_be_accessed_by">
+    <rdfs:range rdf:resource="#Role"/>
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Can be accessed by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_hosted_in">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Location"/>
+    <rdfs:label xml:lang="en">Is hosted in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Provides_governed_interface_to_access">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Provides governed interface to access</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_owned_and_governed_by">
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Is owned and governed by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Contains">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Location"/>
+          <owl:Class rdf:about="#Organization_Unit"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Contains</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_performed_by">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Role"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Is performed by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Participates_in">
+    <rdfs:range rdf:resource="#Process"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Participates in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_governed_and_measured_by">
+    <rdfs:range rdf:resource="#Contract"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Is governed and measured by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Supplies">
+    <rdfs:range rdf:resource="#Platform_Service"/>
+    <rdfs:domain rdf:resource="#Logical_Technology_Component"/>
+    <rdfs:label xml:lang="en">Supplies</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Creates">
+    <rdfs:range rdf:resource="#Goal"/>
+    <rdfs:domain rdf:resource="#Driver"/>
+    <rdfs:label xml:lang="en">Creates</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Meets">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Contract"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Service_Quality"/>
+    <rdfs:label xml:lang="en">Meets</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Orchestrates">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Orchestrates</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Implements">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#Logical_Application_Component"/>
+    <rdfs:label xml:lang="en">Implements</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_delivered_by">
+    <rdfs:range rdf:resource="#Work_Package"/>
+    <rdfs:domain rdf:resource="#Capability"/>
+    <rdfs:label xml:lang="en">Is delivered by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Motivates">
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+    <rdfs:domain rdf:resource="#Driver"/>
+    <rdfs:label xml:lang="en">Motivates</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Resides_within">
+    <rdfs:range rdf:resource="#Logical_Data_Component"/>
+    <rdfs:domain rdf:resource="#Data_Entity"/>
+    <rdfs:label xml:lang="en">Resides within</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_guided_by">
+    <rdfs:range rdf:resource="#Control"/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Is guided by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Performs_task_in">
+    <rdfs:range rdf:resource="#Role"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Performs task in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_generated_by">
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:label xml:lang="en">Is generated by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_resolved_by">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:label xml:lang="en">Is resolved by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Encapsulates">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Data_Entity"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Logical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Encapsulates</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Decomposes">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Data_Entity"/>
+          <owl:Class rdf:about="#Driver"/>
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Goal"/>
+          <owl:Class rdf:about="#Location"/>
+          <owl:Class rdf:about="#Logical_Application_Component"/>
+          <owl:Class rdf:about="#Logical_Technology_Component"/>
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#Objective"/>
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Role"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Data_Entity"/>
+          <owl:Class rdf:about="#Driver"/>
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Goal"/>
+          <owl:Class rdf:about="#Location"/>
+          <owl:Class rdf:about="#Logical_Application_Component"/>
+          <owl:Class rdf:about="#Logical_Technology_Component"/>
+          <owl:Class rdf:about="#Measure"/>
+          <owl:Class rdf:about="#Objective"/>
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Physical_Application_Component"/>
+          <owl:Class rdf:about="#Physical_Data_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Service"/>
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Role"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Decomposes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_realized_through">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Goal"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Objective"/>
+    <rdfs:label xml:lang="en">Is realized through</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Resolves">
+    <rdfs:range rdf:resource="#Event"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Resolves</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_dependent_on">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Logical_Technology_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Logical_Technology_Component"/>
+          <owl:Class rdf:about="#Physical_Technology_Component"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Is dependent on</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Addresses">
+    <rdfs:range rdf:resource="#Driver"/>
+    <rdfs:domain rdf:resource="#Goal"/>
+    <rdfs:label xml:lang="en">Addresses</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_accessed_and_updated_through">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain rdf:resource="#Data_Entity"/>
+    <rdfs:label xml:lang="en">Is accessed and updated through</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Owns">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+    <rdfs:label xml:lang="en">Owns</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Relates_to">
+    <rdfs:range rdf:resource="#Data_Entity"/>
+    <rdfs:domain rdf:resource="#Data_Entity"/>
+    <rdfs:label xml:lang="en">Relates to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Produces">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Product"/>
+    <rdfs:label xml:lang="en">Produces</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_tracked_against">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Objective"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Measure"/>
+    <rdfs:label xml:lang="en">Is tracked against</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Accesses">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:domain rdf:resource="#Role"/>
+    <rdfs:label xml:lang="en">Accesses</rdfs:label>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->
