@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://purl.org/pmcm#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://purl.org/pmcm">
+  <owl:Ontology rdf:about="">
+    <spin:imports rdf:resource="http://topbraid.org/spin/owlrl-all"/>
+    <owl:versionInfo>Process Modeling Content Metamodel for Linked Open Vocabulary</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Event">
+    <rdfs:label xml:lang="pt-br">Evento</rdfs:label>
+    <rdfs:comment xml:lang="pt-br">Uma alteração de estado organizacional que aciona eventos de processamento; Podem ser originados dentro ou fora da organização e podem ser resolvidos dentro ou fora da organização.</rdfs:comment>
+    <rdfs:label xml:lang="en">Event </rdfs:label>
+    <rdfs:comment xml:lang="en">An organizational state change that triggers processing events; may originate from inside or outside the organization and may be resolved inside or outside the organization. </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Business_Service">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Service"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">An element of behavior that provides specific functionality in response to requests from actors or other services. A service delivers or supports business capabilities, has an explicitly defined interface, and is explicitly governed. Services are defined for business, information systems, and platforms.</rdfs:comment>
+    <rdfs:comment xml:lang="pt-br">Suporta capacidades empresariais através de uma interface explicitamente definida e é explicitamente governada por uma organização.</rdfs:comment>
+    <rdfs:label xml:lang="en">Business Service</rdfs:label>
+    <rdfs:label xml:lang="pt-br">Serviço de Negócio</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Standards_class">
+    <rdfs:comment xml:lang="en">Non-Standard, Proposed Standard, Provisional Standard, Standard, Phasing-Out Standard, Retired Standard. </rdfs:comment>
+    <rdfs:label xml:lang="en">Standards class </rdfs:label>
+    <owl:oneOf rdf:parseType="Collection">
+      <owl:Thing rdf:ID="Non-Standard"/>
+      <owl:Thing rdf:ID="Proposed_Standard"/>
+      <owl:Thing rdf:ID="Provisional_Standard"/>
+      <owl:Thing rdf:ID="Standard"/>
+      <owl:Thing rdf:ID="Phasing-Out_Standard"/>
+      <owl:Thing rdf:ID="Retired_Standard"/>
+    </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Service">
+    <rdfs:comment xml:lang="pt-br">Um elemento de comportamento que oferece uma funcionalidade especifica para responder requisições de atores ou outros serviços. Um serviço define ou suporta capacidade de negócio, e tem uma interface definida e governada explicitamente. Serviços são definidos pelo negócio, sistemas de informação e plataformas</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Serviço</rdfs:label>
+    <rdfs:label xml:lang="en">Service</rdfs:label>
+    <rdfs:comment xml:lang="en">An element of behavior that provides specific functionality in response to requests from actors or other services. A service delivers or supports business capabilities, has an explicitly defined interface, and is explicitly governed. Services are defined for business, information systems, and platforms. </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Organization_Unit">
+    <rdfs:comment xml:lang="pt-br">Uma unidade autônoma de recursos com metas, objetivos e medidas. As unidades organizacionais podem incluir partes externas e organizações parceiras de negócios.</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Unidade Organizacional</rdfs:label>
+    <rdfs:label xml:lang="en">Organization Unit</rdfs:label>
+    <rdfs:comment xml:lang="en">A self-contained unit of resources with goals, objectives, and measures. Organization units may include external parties and business partner organizations. </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Function">
+    <rdfs:comment xml:lang="pt-br">Fornece capacidades empresariais estreitamente alinhadas a uma organização, mas não necessariamente explicitamente governadas pela organização. Também referida como "função comercial".</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Função</rdfs:label>
+    <rdfs:comment xml:lang="en">Delivers business capabilities closely aligned to an organization, but not necessarily explicitly governed by the organization. Also referred to as "business function". </rdfs:comment>
+    <rdfs:label xml:lang="en">Function</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Product">
+    <rdfs:comment xml:lang="pt-br">Saída gerada pelo negócio. Um produto do negócio resultante da execução de um processo</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Produto</rdfs:label>
+    <rdfs:label xml:lang="en">Product</rdfs:label>
+    <rdfs:comment xml:lang="en">Output generated by the business. The business product of the execution of a process. </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Process">
+    <rdfs:comment xml:lang="en">A process represents flow of control between or within functions and/or services (depends on the granularity of definition).&#xD;
+Processes represent a sequence of activities that together achieve a specified outcome, can be decomposed into sub-processes, and can show operation of a function or service (at next level of detail). Processes may also be used to link or compose organizations, functions, services, and processes.</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Processo</rdfs:label>
+    <rdfs:comment xml:lang="pt-br">Um processo representa o fluxo de controle entre ou dentro de funções e / ou serviços (depende da granularidade da definição).&#xD;
+Os processos representam uma seqüência de atividades que juntos conseguem um resultado especificado, podem ser decompostas em subprocessos e podem mostrar a operação de uma função ou serviço (no próximo nível de detalhe). Os processos também podem ser usados para vincular ou compor organizações, funções, serviços e processos.</rdfs:comment>
+    <rdfs:label xml:lang="en">Process</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Control">
+    <rdfs:comment xml:lang="pt-br">Uma etapa de tomada de decisão com lógica de decisão acompanhante utilizada para determinar a abordagem de execução de um processo ou para garantir que um processo esteja em conformidade com critérios de governança. Por exemplo, um controle de aprovação no processo de processamento de solicitação de compra que verifica se o valor total do pedido está dentro dos limites de assinatura do solicitante ou se ele precisa escalar para autoridade superior.</rdfs:comment>
+    <rdfs:label xml:lang="en">Control </rdfs:label>
+    <rdfs:comment xml:lang="en">A decision-making step with accompanying decision logic used to determine execution approach for a process or to ensure that a process complies with governance criteria. For example, a sign-off control on the purchase request processing process that checks whether the total value of the request is within the sign-off limits of the requester, or whether it needs escalating to higher authority. </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Actor">
+    <rdfs:comment xml:lang="pt-br">Uma pessoa, organização ou sistema que tem um papel que inicia ou interage com atividades; Por exemplo, um representante de vendas que viaja para visitar clientes. Os atores podem ser internos ou externos a uma organização. Na indústria automotiva, um fabricante de equipamentos originais seria considerado um ator por uma concessionária automotiva que interage com suas atividades da cadeia de suprimentos.</rdfs:comment>
+    <rdfs:label xml:lang="pt-br">Ator</rdfs:label>
+    <rdfs:comment xml:lang="en">A person, organization, or system that has a role that initiates or interacts with activities; for example, a sales representative who travels to visit customers. Actors may be internal or external to an organization. In the automotive industry, an original equipment manufacturer would be considered an actor by an automotive dealership that interacts with its supply chain activities.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="Performs_task_in">
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Performs task in</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Orchestrates">
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en">Orchestrates</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Can_be_accessed_by">
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Can be accessed by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Contains">
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+    <rdfs:label xml:lang="en">Contains</rdfs:label>
+    <rdfs:range rdf:resource="#Actor"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Belongs_to"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_bounded_by">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Is bounded by</rdfs:label>
+    <rdfs:domain rdf:resource="#Function"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Provides_governed_interface_to_access"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_provided_to">
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Is provided to</rdfs:label>
+    <rdfs:range rdf:resource="#Actor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Consumes">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Consumes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_performed_by">
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Is performed by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_guided_by">
+    <rdfs:label xml:lang="pt-br">é guiado por</rdfs:label>
+    <rdfs:label xml:lang="en">Is guided by </rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Ensures_correct_operation_of"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_produced_by">
+    <rdfs:domain rdf:resource="#Product"/>
+    <rdfs:label xml:lang="en">Is produced by</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Produces"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_owned_and_governed_by">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Owns_and_Governs"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">Is owned and governed by</rdfs:label>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Produces">
+    <owl:inverseOf rdf:resource="#Is_produced_by"/>
+    <rdfs:label xml:lang="en">Produces</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Organization_Unit"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Product"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Accesses">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Accesses</rdfs:label>
+    <owl:inverseOf rdf:resource="#Can_be_accessed_by"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Supports">
+    <rdfs:label xml:lang="en">Supports</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Actor"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Service"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_realized_by">
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Is realized by</rdfs:label>
+    <rdfs:range rdf:resource="#Process"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Owns">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Owns</rdfs:label>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Is_owned_by"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Belongs_to">
+    <rdfs:label xml:lang="en">Belongs to</rdfs:label>
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <owl:inverseOf rdf:resource="#Contains"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Is_resolved_by">
+    <rdfs:range rdf:resource="#Process"/>
+    <rdfs:domain rdf:resource="#Event"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="Resolves"/>
+    </owl:inverseOf>
+    <rdfs:label xml:lang="en">Is resolved by </rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Communicates_with">
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Communicates with</rdfs:label>
+    <rdfs:domain rdf:resource="#Function"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Resolves">
+    <owl:inverseOf rdf:resource="#Is_resolved_by"/>
+    <rdfs:range rdf:resource="#Event"/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Resolves </rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Owns_and_Governs">
+    <rdfs:range rdf:resource="#Service"/>
+    <rdfs:label xml:lang="en">Owns and Governs</rdfs:label>
+    <owl:inverseOf rdf:resource="#Is_owned_and_governed_by"/>
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Is_owned_by">
+    <owl:inverseOf rdf:resource="#Owns"/>
+    <rdfs:label xml:lang="en">Is owned by</rdfs:label>
+    <rdfs:domain rdf:resource="#Function"/>
+    <rdfs:range rdf:resource="#Organization_Unit"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Involves">
+    <rdfs:range rdf:resource="#Actor"/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Involves</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Standard_class">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Service"/>
+          <owl:Class rdf:about="#Function"/>
+          <owl:Class rdf:about="#Process"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">Standard_class</rdfs:label>
+    <rdfs:range rdf:resource="#Standards_class"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Interacts_with">
+    <owl:inverseOf rdf:resource="#Supports"/>
+    <rdfs:label xml:lang="en">Interacts with</rdfs:label>
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:range rdf:resource="#Function"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Performs">
+    <owl:inverseOf rdf:resource="#Is_performed_by"/>
+    <rdfs:label xml:lang="en">Performs</rdfs:label>
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Ensures_correct_operation_of">
+    <owl:inverseOf rdf:resource="#Is_guided_by"/>
+    <rdfs:domain rdf:resource="#Control"/>
+    <rdfs:range rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Ensures correct operation of </rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Participates_in">
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Participates in</rdfs:label>
+    <rdfs:range rdf:resource="#Process"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Precedes_or_Follows">
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Precedes or Follows</rdfs:label>
+    <rdfs:range rdf:resource="#Process"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#Provides_governed_interface_to_access">
+    <owl:inverseOf rdf:resource="#Is_bounded_by"/>
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:range rdf:resource="#Function"/>
+    <rdfs:label xml:lang="en">Provides governed interface to access</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="Last_standard_review_date">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:comment xml:lang="en">Last date that the standard was reviewed. </rdfs:comment>
+    <rdfs:label xml:lang="en">Last standard review date </rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Service"/>
+          <owl:Class rdf:about="#Function"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="FTE">
+    <rdfs:label xml:lang="en">FTE </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">Estimated number of FTEs that operate in this Role </rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Standard_creation_date">
+    <rdfs:comment xml:lang="en">If the product is a standard, when the standard was created. </rdfs:comment>
+    <rdfs:label xml:lang="en">Standard creation date </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Service"/>
+          <owl:Class rdf:about="#Function"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Next_standard_review_date">
+    <rdfs:comment xml:lang="en">Next date for the standard to be reviewed. </rdfs:comment>
+    <rdfs:label xml:lang="en">Next standard review date </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Service"/>
+          <owl:Class rdf:about="#Function"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Retire_date">
+    <rdfs:label xml:lang="en">Retire date </rdfs:label>
+    <rdfs:comment xml:lang="en">Date when the standard was/will be retired. </rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#Service"/>
+          <owl:Class rdf:about="#Function"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Headcount">
+    <rdfs:domain rdf:resource="#Organization_Unit"/>
+    <rdfs:label xml:lang="en">Headcount </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">Number of FTEs working within the organization. </rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Process_criticality">
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en">Process criticality </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">Criticality of this process to business operations. </rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Actor_goal">
+    <rdfs:comment xml:lang="en">Objectives that this actor has, in general terms. </rdfs:comment>
+    <rdfs:label xml:lang="en">Actor goal </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Actor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Actor_tasks">
+    <rdfs:domain rdf:resource="#Actor"/>
+    <rdfs:label xml:lang="en">Actor tasks </rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">Tasks that this actor performs, in general terms. </rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:ID="Decomposes">
+    <rdfs:label xml:lang="en">Decomposes</rdfs:label>
+  </owl:TransitiveProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->
